@@ -1,6 +1,9 @@
 ---
 theme: ./
 title: "胡乔的分享报告"
+transition: fade
+titleTemplate: "%s"
+colorSchema: "light"
 ---
 
 # 胡乔-分享报告
@@ -19,7 +22,6 @@ My Sharing Report
 </BarBottom>
 
 ---
-
 
 ## `<About Me />`
 
@@ -54,7 +56,7 @@ My Sharing Report
 - 🌐 **HTML5** 用于构建和呈现互联网内容的核心语言
 
 - 🎨 **CSS3** 用于描述 HTML 或 XML（包括 SVG 和 XHTML）文档
-的呈现
+  的呈现
 
 - 🟡 **JavaScript** 一种高级的、解释型的编程语言，主要用于 Web
   浏览器中，使用户与网页可以进行交互
@@ -76,16 +78,16 @@ My Sharing Report
 
 # 在工作中学到了什么？
 
- 在过去的几个月中，根据项目的实际需求研究学习了2D/3D数据可视化领域的相关技术。
--  **2D图表库** -学习并应用了多种图表库，如ECharts、DataV。
+ 在过去的几个月中，根据项目的实际需求学习探索了2D/3D数据可视化领域的相关技术。
+-  **2D图表库** -学习了多种图表库并应用到实际项目中，如ECharts、DataV。
 
--  **3D地理空间数据可视化框架** -Cesium、L7、真趣地图SDK的3D模型加载与交互、矢量和几何图形的绘制。
+-  **3D地理空间数据可视化框架** - 熟悉了Cesium、L7、真趣地图SDK的3D模型加载与交互、矢量和几何图形的绘制技术。
 
--  **跨平台桌面应用程序框架** - 使用Electron提供的API来控制视频流等桌面应用特有的元素,通过Chrome的开发者工具进行调试,构建打包应用。
+-  **跨平台桌面应用程序框架** - 通过Electron框架提供的API来控制视频流等桌面应用特有的元素,利用Chrome开发者工具进行高效调试,成功构建和打包了跨平台的桌面应用。
 
--  **响应式布局** - 流体网格系统和相对单位（如百分比、em、rem）的使用。
+-  **响应式布局** - 掌握了流体网格系统和使用相对单位（如百分比、em、rem）的技巧。
 
--  **AI** - 关注行业动态,学习AI模型的基本原理和使用方法。
+-  **AI** - 持续关注AI行业的最新动态，学习了AI模型的基本原理与使用，并探索了其在实际工作中的应用方法。
 
 <BarBottom >
   <Item text="Hello World！">
@@ -99,17 +101,17 @@ imageOrder: 1
 
 # Code Example
 
-```html
-<el-row :gutter="20">
-<el-col :span="16"><div class="grid-content bg-purple">
-</div>
-</el-col>
-<el-col :span="8"><div class="grid-content bg-purple">
-</div>
-</el-col>
-</el-row>
+```js
+const segmentProgress = (progress * totalPoints) % 1;
+const lat = currentPoint[0] + (nextPoint[0]-currentPoint[0]);
+const lng = currentPoint[1] + (nextPoint[1]-currentPoint[1]);
+marker.setLatLng([lat, lng]);
+map.panTo([lat, lng]);
+if (progress < 1)
+{requestAnimationFrame(animateMarker);}
 ```
-```html
+
+```css
 <style>
   .el-row {
     margin-bottom: 20px;
@@ -119,7 +121,9 @@ imageOrder: 1
   }
 </style>
 ```
+
 <BarBottom >
   <Item text="Hello World！">
   </Item>
 </BarBottom>
+```
