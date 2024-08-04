@@ -10,10 +10,15 @@ colorSchema: "light"
 
 My Sharing Report
 
-<div class="pt-12">
-  <span @click="next" class="px-2 p-1 rounded cursor-pointer hover:bg-white hover:bg-opacity-10">
-   按空格键进入下一页 <carbon:arrow-right class="inline"/>
-  </span>
+<div class="flex">
+  <div class="w-1/2">
+    <span @click="next" class="px-10 p-1 rounded cursor-pointer hover:bg-white hover:bg-opacity-10">
+      按空格键进入下一页 <carbon:arrow-right class="inline"/>
+    </span>
+  </div>
+  <div class="w-1/2">
+    <img src="https://cover.sli.dev" class="transition-opacity duration-1000 ease-in-out hover:opacity-50" width="600" height="600">
+  </div>
 </div>
 
 <BarBottom >

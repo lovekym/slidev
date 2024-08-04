@@ -30,6 +30,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
+  <Transition name="slide-fade">
   <div class="slidev-layout grid image-x">
     <div class="my-auto flex">
       <div class="w-1/2 flex justify-center items-center p-8 max-h-md object-cover" :class="imageOrderClass">
@@ -40,4 +41,20 @@ onBeforeUnmount(() => {
       </div>
     </div>
   </div>
+</Transition>
 </template>
+<style scoped>
+.slide-fade-enter-active {
+  transition: all 2s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(30px);
+  opacity: 0;
+}
+</style>
