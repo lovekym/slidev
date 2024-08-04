@@ -100,7 +100,6 @@ imageOrder: 1
 ---
 
 # Code Example
-
 ```js
 const segmentProgress = (progress * totalPoints) % 1;
 const lat = currentPoint[0] + (nextPoint[0]-currentPoint[0]);
@@ -126,4 +125,3 @@ if (progress < 1)
   <Item text="Hello World！">
   </Item>
 </BarBottom>
-```

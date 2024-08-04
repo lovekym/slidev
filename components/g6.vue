@@ -1,9 +1,9 @@
 <template>
-    <div id="map" ref="mapContainer" style="height: 400px;width: 400px;"></div>
+    <div id="map" ref="mapContainer"></div>
 </template>
 
 <script>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted,nextTick } from 'vue';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
@@ -11,12 +11,11 @@ export default {
     name: 'cqMap',
     setup() {
         const mapContainer = ref(null);
-        let map = null;
+        let map = ref(null);
         let polyline = null;
         let marker = null;
         let startTime = null
         const duration = 5000
-
         const chongqing = [29.464996, 106.476523];
         const tempPos = [
             [106.477546, 29.464363],
@@ -40,12 +39,11 @@ export default {
         const routeData = tempPos.map(pos => [pos[1], pos[0]]);
 
         function initMap() {
+            nextTick().then(() => {
             map = L.map(mapContainer.value).setView(chongqing, 16);
-
             L.tileLayer('http://wprd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&style=7&x={x}&y={y}&z={z}', {
                 subdomains: "1234"
             }).addTo(map);
-
             polyline = L.polyline(routeData, { color: 'green' }).addTo(map);
             marker = L.circle(routeData[0], {
                 color: 'purple',
@@ -53,6 +51,9 @@ export default {
                 fillOpacity: 1.0,
                 radius: 10
             }).addTo(map);
+
+             map.invalidateSize();
+            });
         }
 
         function animateMarker(timestamp) {
@@ -103,8 +104,6 @@ export default {
 </script>
 
 <style scoped>
-@import 'leaflet/dist/leaflet.css';
-
 #map {
     height: 401px;
     width: 401px;
